@@ -1,0 +1,9 @@
+# VIM Files
+*.swp
+*.swo
+*.un~
+
+.vimrc
+.vim
+
+.DS_Store

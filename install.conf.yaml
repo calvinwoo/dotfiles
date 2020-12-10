@@ -12,3 +12,4 @@
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - [git config --global core.excludesfile ~/.gitignore, Setting gitignore]
+  - [brew install ripgrep, Install VIM search]

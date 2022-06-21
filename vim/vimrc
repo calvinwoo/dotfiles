@@ -16,7 +16,8 @@ Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
 Plug 'wincent/terminus'
-Plug 'junegunn/vim-peekaboo'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'kburdett/vim-nuuid'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -89,7 +90,7 @@ set backspace=indent,eol,start
 """"""
 " CoC
 let g:airline#extensions#coc#enabled = 1
-let g:coc_global_extensions = ['coc-tsserver', 'coc-eslint', 'coc-json', 'coc-prettier', 'coc-css', 'coc-tslint-plugin', 'coc-json', 'coc-html', 'coc-python', 'coc-sh']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-eslint', 'coc-json', 'coc-prettier', 'coc-css', 'coc-tslint-plugin', 'coc-json', 'coc-html', 'coc-pyright', 'coc-sh']
 
 " if hidden is not set, TextEdit might fail.
 set hidden
@@ -240,6 +241,10 @@ endif
 
 nnoremap <Tab> :CtrlP<CR>
 nnoremap <S-Tab> :CtrlPBuffer<CR>
+
+"""
+" markdown preview
+let g:mkdp_auto_close = 0
 
 """"""
 " FileType settings

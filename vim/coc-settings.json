@@ -1,8 +1,6 @@
 {
   "prettier.requireConfig": true,
-  "prettier.onlyUseLocalVersion": true,
-  "tslint.autoFixOnSave": true,
-  "eslint.enable": false,
+  "prettier.onlyUseLocalVersion": false,
   "eslint.autoFixOnSave": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",

@@ -51,10 +51,11 @@ keymap("v", ">", ">gv", opts)
 -- Plugins --
 
 -- Telescope
-keymap("n", "<leader>ff", ":lua require('telescope.builtin').find_files()<cr>", opts)
-keymap("n", "<leader>ft", ":lua require('telescope.builtin').live_grep()<cr>", opts)
-keymap("n", "<leader>fp", ":lua require('telescope.builtin').buffers()<cr>", opts)
-keymap("n", "<leader>fb", ":lua require('telescope.builtin').help_tags()<cr>", opts)
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
 --[[
 -- NvimTree

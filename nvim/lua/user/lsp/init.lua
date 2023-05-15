@@ -52,7 +52,8 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
+  -- might interfere with telescope bindings
+  -- vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
 
   -- https://github.com/neovim/nvim-lspconfig/wiki/UI-Customization#show-line-diagnostics-automatically-in-hover-window
   vim.api.nvim_create_autocmd("CursorHold", {
@@ -81,7 +82,7 @@ lspconfig.tsserver.setup {
   end,
   capabilities = capabilities,
 }
-lspconfig.sumneko_lua.setup {
+lspconfig.lua_ls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
   settings = {
@@ -111,8 +112,7 @@ null_ls.setup({
                 group = augroup,
                 buffer = bufnr,
                 callback = function()
-                    -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
-                    vim.lsp.buf.formatting_sync()
+                  vim.lsp.buf.format({ bufnr = bufnr })
                 end,
             })
         end

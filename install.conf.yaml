@@ -2,7 +2,7 @@
     link:
       relink: true
 
-- clean: ['~']
+- clean: ["~"]
 
 - link:
     ~/.vim: vim
@@ -10,6 +10,15 @@
     ~/.inputrc: inputrc
 
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
-  - [git config --global core.excludesfile ~/.gitignore, Setting gitignore]
-  - [brew install ripgrep, Install VIM search]
+    - [git submodule update --init --recursive, Installing submodules]
+    - [git config --global core.excludesfile ~/.gitignore, Setting gitignore]
+    - [brew install ripgrep, Install VIM search]
+    - [brew install fd, Install VIM search]
+    - [
+        brew install jesseduffield/lazygit/lazygit,
+        https://www.lazyvim.org/#%EF%B8%8F-requirements,
+      ]
+    - [
+        brew tap homebrew/cask-fonts && brew install font-hack-nerd-font,
+        Install a nerd font,
+      ]

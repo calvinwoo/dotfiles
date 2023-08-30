@@ -1,9 +1,20 @@
+vim.opt.background = "light"
+
 return {
-  { "NLKNguyen/papercolor-theme" },
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   {
-    "LazyVim/LazyVim",
+    "f-person/auto-dark-mode.nvim",
     opts = {
-      colorscheme = "PaperColor",
+      set_dark_mode = function()
+        vim.api.nvim_set_option("background", "dark")
+      end,
+      set_light_mode = function()
+        vim.api.nvim_set_option("background", "light")
+      end,
     },
+    init = function()
+      local auto_dark_mode = require("auto-dark-mode")
+      auto_dark_mode.init()
+    end,
   },
 }

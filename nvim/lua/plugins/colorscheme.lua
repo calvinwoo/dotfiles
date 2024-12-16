@@ -3,6 +3,12 @@ vim.opt.background = "light"
 return {
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "catppuccin",
+    },
+  },
+  {
     "f-person/auto-dark-mode.nvim",
     opts = {
       set_dark_mode = function()
